@@ -1,6 +1,6 @@
 {
   "name": "alfred-vpn-networksetup",
-  "version": "0.3.2",
+  "version": "0.3.3",
   "description": "Alfred 3 workflow to connect/disconnect from VPNs (uses networksetup)",
   "license": "MIT",
   "repository": "rossipedia/alfred-vpn-networksetup",
