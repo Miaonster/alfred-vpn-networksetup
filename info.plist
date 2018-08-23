@@ -54,7 +54,7 @@
 				<key>runningsubtext</key>
 				<string>Retrieving VPN list...</string>
 				<key>script</key>
-				<string>./node_modules/.bin/run-node index.js "$1"</string>
+        <string>./node_modules/.bin/run-node ./lib/index.js "$1"</string>
 				<key>scriptargtype</key>
 				<integer>1</integer>
 				<key>scriptfile</key>
@@ -83,7 +83,7 @@
 				<key>escaping</key>
 				<integer>102</integer>
 				<key>script</key>
-				<string>./node_modules/.bin/run-node toggle.js "$1"</string>
+        <string>./node_modules/.bin/run-node ./lib/toggle.js "$1"</string>
 				<key>scriptargtype</key>
 				<integer>1</integer>
 				<key>scriptfile</key>
