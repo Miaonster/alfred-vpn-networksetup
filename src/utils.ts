@@ -56,10 +56,10 @@ const findByName = (name: string) => {
 };
 
 export const connect = (name: string) =>
-  spawn('networkmanager', ['-connectppoeservice', name]);
+  spawn('networksetup', ['-connectppoeservice', name]);
 
 export const disconnect = (name: string) =>
-  spawn('networkmanager', ['-disconnectpppoeservice', name]);
+  spawn('networksetup', ['-disconnectpppoeservice', name]);
 
 export const isConnected = (name: string) => {
   let found = findByName(name);
