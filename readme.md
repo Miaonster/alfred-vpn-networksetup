@@ -4,11 +4,10 @@
 
 <img src="screenshot.png" width="649"/>
 
-> The original version, `alfred-vpn` uses `scutil` to toggle the vpn
-> state on and off. Unfortunately, `scutil` doesn't seem to work if the vpn
-> connection requires a secret key.
-> Using `networksetup` instead to connect/disconnect works as expected. Thus,
-> this fork.
+> The original version ([`alfred-vpn`](https://github.com/stve/alfred-vpn)) uses
+> `scutil` to toggle the vpn state on and off. Unfortunately, `scutil` doesn't
+> seem to work if the vpn connection requires a secret key. Using `networksetup`
+> instead to connect/disconnect works as expected. Thus, this fork.
 >
 > - Bryan Ross
 
