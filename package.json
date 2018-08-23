@@ -1,21 +1,28 @@
 {
-  "name": "alfred-vpn",
-  "version": "0.2.0",
-  "description": "Alfred 3 workflow to connect/disconnect from VPNs",
+  "name": "alfred-vpn-networksetup",
+  "version": "0.3.0",
+  "description": "Alfred 3 workflow to connect/disconnect from VPNs (uses networksetup)",
   "license": "MIT",
-  "repository": "stve/alfred-vpn",
+  "repository": "rossipedia/alfred-vpn-networksetup",
   "author": {
     "name": "stve",
     "email": "steve.agalloco@gmail.com",
-    "url": "beforeitwasround.com"
+    "url": "https://beforeitwasround.com"
   },
+  "contributors": [
+    {
+      "name": "Bryan Ross",
+      "email": "git@rossipedia.com",
+      "url": "https://rossipedia.com"
+    }
+  ],
   "engines": {
     "node": ">=4"
   },
   "main": "lib/index.js",
   "scripts": {
-    "build": "tsc",
-    "prepublishOnly": "tsc",
+    "watch": "tsc --watch",
+    "prepare": "tsc",
     "test": "xo",
     "postinstall": "alfy-init",
     "preuninstall": "alfy-cleanup"
