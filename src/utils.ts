@@ -56,7 +56,7 @@ const findByName = (name: string) => {
 };
 
 export const connect = (name: string) =>
-  spawn('networksetup', ['-connectppoeservice', name]);
+  spawn('networksetup', ['-connectpppoeservice', name]);
 
 export const disconnect = (name: string) =>
   spawn('networksetup', ['-disconnectpppoeservice', name]);
