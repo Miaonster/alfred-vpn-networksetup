@@ -14,8 +14,9 @@
   },
   "main": "lib/index.js",
   "scripts": {
-    "test": "xo",
+    "build": "tsc",
     "prepublishOnly": "tsc",
+    "test": "xo",
     "postinstall": "alfy-init",
     "preuninstall": "alfy-cleanup"
   },
