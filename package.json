@@ -21,11 +21,11 @@
     "preuninstall": "alfy-cleanup"
   },
   "files": [
-    "lib/index.js",
     "icon.png",
     "info.plist",
-    "lib/utils.js",
-    "lib/toggle.js"
+    "lib/index.js",
+    "lib/toggle.js",
+    "lib/utils.js"
   ],
   "keywords": [
     "alfred",
