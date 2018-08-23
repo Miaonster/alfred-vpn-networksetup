@@ -14,15 +14,16 @@
   },
   "scripts": {
     "test": "xo",
+    "prepublishOnly": "tsc",
     "postinstall": "alfy-init",
     "preuninstall": "alfy-cleanup"
   },
   "files": [
-    "index.js",
+    "lib/index.js",
     "icon.png",
     "info.plist",
-    "src/utils.js",
-    "toggle.js"
+    "lib/utils.js",
+    "lib/toggle.js"
   ],
   "keywords": [
     "alfred",
