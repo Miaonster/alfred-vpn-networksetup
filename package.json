@@ -35,8 +35,10 @@
     "alfy": "^0.6.0"
   },
   "devDependencies": {
+    "@types/node": "^10.7.1",
     "alfy-test": "^0.3.0",
     "ava": "^0.18.0",
+    "typescript": "^3.0.1",
     "xo": "^0.17.0"
   }
 }
