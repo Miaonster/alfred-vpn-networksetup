@@ -13,7 +13,7 @@ declare module 'alfy' {
 
   type AlfredText = Partial<Record<'copy' | 'largetype', string>>;
 
-  type AlfredVariables = Record<string,string>;
+  type AlfredVariables = Record<string, string>;
 
   interface AlfredItem {
     uid?: string;
@@ -29,7 +29,6 @@ declare module 'alfy' {
     text?: AlfredText;
     variables?: AlfredVariables;
   }
-
 
   // API
   function output(items: AlfredItem[]): void;
