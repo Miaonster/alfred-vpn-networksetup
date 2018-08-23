@@ -14,7 +14,7 @@
 ## Install
 
 ```
-$ npm install --global alfred-vpn
+$ npm install --global alfred-vpn-networksetup
 ```
 
 *Requires [Node.js](https://nodejs.org) 4+ and the Alfred
@@ -34,3 +34,5 @@ connectivity state.
 MIT (c) Steve Agalloco. See
 [LICENSE](https://github.com/stve/alfred-vpn/blob/master/LICENSE.md) for
 details.
+
+Additions by Bryan Ross
