@@ -1,7 +1,5 @@
 import { spawnSync as spawn } from 'child_process';
 
-const regex = /(\*?)\s(\(.*\))\s.*-.*-.*-.*\s(".*")\s\[\w*\]?/g;
-
 type ConnectedStatus = '(Connected)' | '(Connecting)' | '(Disconnected)';
 
 class Connection {
@@ -22,31 +20,31 @@ class Connection {
   }
 }
 
-export function list() {
-  let connections: Connection[] = [];
-  let result = spawn('scutil', ['--nc', 'list']);
-  let lines = result.stdout.toString().split('\n');
-  lines.forEach((line, index, arr) => {
-    if (index === arr.length - 1 && line === '') {
-      return;
-    }
-    if (line.indexOf('Available') > -1) {
-      return;
-    }
-
-    let data = regex.exec(line.replace(/\s+/g, ' '));
-    if (data) {
-      connections.push(
-        new Connection(
-          data[1] === '*',
-          data[2] as ConnectedStatus,
-          data[3].replace(/"/g, '')
-        )
+const regex = /(\*?)\s+\((Connected|Connecting|Disconnected)\)\s+.*-.*-.*-.*\s+"(.*)"\s+\[[\w:]*\]?/;
+export function list(): Connection[] {
+  return (spawn('scutil', ['--nc', 'list'])
+    .stdout.toString()
+    .trim()
+    .split(/\n/g)
+    .slice(1)
+    .map(line => {
+      const parts = regex.exec(line);
+      if (!parts) {
+        return null;
+      }
+      return new Connection(
+        parts[1] === '*',
+        parts[2] as ConnectedStatus,
+        parts[3]
       );
+    })
+    .filter(c => c != null) as Connection[]).sort(
+    (c1: Connection, c2: Connection) => {
+      const n1 = c1.name.toUpperCase();
+      const n2 = c2.name.toUpperCase();
+      return n1 < n2 ? -1 : n1 > n2 ? 1 : 0;
     }
-  });
-
-  return connections;
+  );
 }
 
 const findByName = (name: string) => {
