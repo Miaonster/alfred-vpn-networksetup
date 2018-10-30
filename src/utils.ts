@@ -1,6 +1,6 @@
 import { spawnSync as spawn } from 'child_process';
 
-type ConnectedStatus = '(Connected)' | '(Connecting)' | '(Disconnected)';
+type ConnectedStatus = 'Connected' | 'Connecting' | 'Disconnected';
 
 class Connection {
   constructor(
@@ -10,13 +10,13 @@ class Connection {
   ) {}
 
   isConnected() {
-    return this.status === '(Connected)';
+    return this.status === 'Connected';
   }
   isConnecting() {
-    return this.status === '(Connecting)';
+    return this.status === 'Connecting';
   }
   isDisconnected() {
-    return this.status === '(Disconnected)';
+    return this.status === 'Disconnected';
   }
 }
 
